@@ -13,7 +13,6 @@ import org.modelmapper.TypeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,9 +27,9 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     PhoneRepository phoneRepository;
 
-    private ModelMapper modelMapper;
-    private TypeMap<User,UserDto> dtoMapper;
-    private TypeMap<UserDto,User> entityMapper;
+    private final ModelMapper modelMapper;
+    private final TypeMap<User,UserDto> dtoMapper;
+    private final TypeMap<UserDto,User> entityMapper;
 
     public UserServiceImpl(){
         this.modelMapper = new ModelMapper();
@@ -55,8 +54,6 @@ public class UserServiceImpl implements IUserService {
     @Transactional
     public User create(UserDto userDto) throws Exception {
         User user = this.convertToEntity(userDto);
-//        List<Phone> userPhones = convertPhonesToEntity(userDto.getPhones());
-//        userPhones.forEach((p) -> p.setUser(user));
 
         this.userRepository.save(user);
 

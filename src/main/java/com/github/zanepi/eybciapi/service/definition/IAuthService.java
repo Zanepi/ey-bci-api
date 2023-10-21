@@ -9,6 +9,6 @@ import javax.security.auth.login.CredentialException;
 
 public interface IAuthService {
 
-    public UserDto register(UserDto userDto) throws Exception;
-    public LoginResponse login(LoginCredentials credentials) throws CredentialException, AccountExpiredException;
+    UserDto register(UserDto userDto) throws Exception;
+    LoginResponse login(LoginCredentials credentials) throws AccountExpiredException;
 }

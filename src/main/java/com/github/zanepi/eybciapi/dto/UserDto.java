@@ -1,6 +1,5 @@
 package com.github.zanepi.eybciapi.dto;
 
-import com.github.zanepi.eybciapi.entity.User;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;

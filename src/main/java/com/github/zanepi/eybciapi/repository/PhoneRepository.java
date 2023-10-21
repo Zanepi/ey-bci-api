@@ -9,5 +9,5 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface PhoneRepository extends JpaRepository<Phone, UUID> {
-    public Optional<List<Phone>> getPhonesByUser(User user);
+    Optional<List<Phone>> getPhonesByUser(User user);
 }

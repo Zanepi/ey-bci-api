@@ -2,7 +2,6 @@ package com.github.zanepi.eybciapi.service;
 
 import com.github.zanepi.eybciapi.dto.LoginCredentials;
 import com.github.zanepi.eybciapi.dto.LoginResponse;
-import com.github.zanepi.eybciapi.dto.PhoneDto;
 import com.github.zanepi.eybciapi.dto.UserDto;
 import com.github.zanepi.eybciapi.entity.Phone;
 import com.github.zanepi.eybciapi.entity.User;

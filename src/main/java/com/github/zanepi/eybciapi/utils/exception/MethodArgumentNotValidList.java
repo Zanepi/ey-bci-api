@@ -3,7 +3,6 @@ package com.github.zanepi.eybciapi.utils.exception;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +17,7 @@ public class MethodArgumentNotValidList {
     private Map<String,String> errors;
 
     public MethodArgumentNotValidList(){
-        this.errors = new HashMap<String,String>();
+        this.errors = new HashMap<>();
     }
 
     public void addNewArgumentError(String attribute,String errorMessage){

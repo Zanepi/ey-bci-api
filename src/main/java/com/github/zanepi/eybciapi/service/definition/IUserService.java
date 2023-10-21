@@ -7,9 +7,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface IUserService {
-    public User convertToEntity(UserDto userDto);
-    public UserDto convertToDto(User user);
-    public User create(UserDto userDto) throws Exception;
-    public Optional<User> findByEmail(String email);
-    public UserDto getById(UUID user_id);
+    User convertToEntity(UserDto userDto);
+    UserDto convertToDto(User user);
+    User create(UserDto userDto) throws Exception;
+    Optional<User> findByEmail(String email);
+    UserDto getById(UUID user_id);
 }
