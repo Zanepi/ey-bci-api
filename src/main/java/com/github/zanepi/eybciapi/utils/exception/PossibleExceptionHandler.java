@@ -3,6 +3,8 @@ package com.github.zanepi.eybciapi.utils.exception;
 import com.github.zanepi.eybciapi.dto.StringResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -36,5 +38,17 @@ public class PossibleExceptionHandler {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public StringResponse handleEmptyRequestBody(HttpMessageNotReadableException ex){
         return new StringResponse("Required body to perform the request is missing");
+    }
+
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public StringResponse handleEmailNotFound(UsernameNotFoundException ex){
+        return new StringResponse(ex.getMessage());
+    }
+
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(BadCredentialsException.class)
+    public StringResponse handleWrongPassword(BadCredentialsException ex){
+        return new StringResponse(ex.getMessage());
     }
 }

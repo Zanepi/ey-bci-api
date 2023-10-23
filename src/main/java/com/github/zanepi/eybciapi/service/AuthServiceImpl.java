@@ -52,8 +52,10 @@ public class AuthServiceImpl implements IAuthService {
 
         User createdUser = this.userService.create(userDto);
 
-        List<Phone> createdUserPhones = this.phoneService.create(userDto.getPhones(),createdUser);
-        createdUser.setPhones(createdUserPhones);
+        if(userDto.getPhones() != null && !userDto.getPhones().isEmpty()) {
+            List<Phone> createdUserPhones = this.phoneService.create(userDto.getPhones(), createdUser);
+            createdUser.setPhones(createdUserPhones);
+        }
         return this.userService.convertToDto(createdUser);
     }
 

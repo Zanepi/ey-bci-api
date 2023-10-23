@@ -1,0 +1,1 @@
+CREATE TABLE users ("user_id" UUID primary key ,"name" VARCHAR(255),"email" VARCHAR(255),"password" VARCHAR(255),"created" TIMESTAMP,"modified" TIMESTAMP,"last_login" TIMESTAMP,"token" VARCHAR(255),"active" BOOLEAN DEFAULT true);

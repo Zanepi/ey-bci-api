@@ -1,0 +1,1 @@
+CREATE TABLE phone (phone_id UUID primary key ,countrycode VARCHAR(255),citycode VARCHAR(255),number VARCHAR(255),created TIMESTAMP,modified TIMESTAMP);

@@ -35,6 +35,7 @@ public class UserDto {
     Date modified;
     Date last_login;
     String token;
+    @Builder.Default
     boolean active = true;
 
 }
